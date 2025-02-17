@@ -1,6 +1,12 @@
 from textnode import TextType, TextNode
 import re
 
+def extract_title(markdown):
+    for mark in markdown:
+        #print(f"printing mark!! ---oasodjoaijd {mark}")
+        if mark.startswith("# "):
+            return mark.lstrip("# ")
+    raise ValueError("H1 header does not exist")
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []

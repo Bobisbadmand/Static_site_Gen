@@ -6,6 +6,7 @@ from rawmarkdown import (
     split_nodes_image,
     split_nodes_link,
     text_to_textnodes,
+    extract_title
 )
 
 from textnode import TextNode, TextType
@@ -307,6 +308,12 @@ class TestTextNodeJoin(unittest.TestCase):
             ],
             nodes,
         )
+
+class TestExtractTitle(unittest.TestCase):
+    def test_extracttitle(self):
+        text = "# this is a title"
+        result = extract_title([text])
+        self.assertEqual(result, "this is a title")
 
 
     

@@ -37,7 +37,7 @@ def block_to_block_type(block):
         elif line[0:2] == "* " or line[0:2] == "- ":
             unorderedlist +=1
         elif line[0:3] == f"{orderedlist+1}. ":
-            print(f"printing ordered list: {orderedlist}")
+            #print(f"printing ordered list: {orderedlist}")
             orderedlist +=1
     if quotecounter == len(quoteblock):
         return block_type_quote
